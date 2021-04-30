@@ -1,27 +1,33 @@
 #include "../inc/Job.h"
 
 // Default Constructor
+
 Job::Job() : time(0), memory(0) {}
 
 // Overloaded Constructor
-Job::Job(const float& in_time, const float& in_memory) : time(in_time), memory(in_memory) {}
+Job::Job(const double& in_time, const double& in_memory) : time(in_time), memory(in_memory) {}
 
 // get the compute time used by a Job
-float Job::get_time() const {
-    return time;    
+double Job::get_time() const {
+    return time;
 }
 
 // get the memory used by the Job
-float Job::get_memory() const {
+double Job::get_memory() const {
     return memory;
 }
 
 // get set the time used by the Job
-void Job::set_time(const float& in_time) {
+void Job::set_time(const double& in_time) {
     time = in_time;
 }
 
 // set the memory used by the Job
-void Job::set_memory(const float& in_memory) {
+void Job::set_memory(const double& in_memory) {
     memory = in_memory;
+}
+
+std::ostream& operator<<(std::ostream& out, const Job& J) {
+    out << std::setprecision(5) << std::setw(5) <<  "Memory: " << J.memory << " Time: " << std::setw(6) << std::setprecision(5) <<  J.time;
+    return out;
 }
