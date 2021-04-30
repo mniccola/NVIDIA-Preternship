@@ -1,66 +1,50 @@
-#include <iostream>
-#include <fstream>
-//#include <string>
-//#include <Windows.h>
-#include <ctime>
-#include <cstdlib>
-//#include <chrono>
-//#include <thread>
+// #include <iostream>
+// #include <fstream>
+// #include <string>
+// #include <ctime>
+// #include <cstdlib>
+// #include <time.h>
+#include "../inc/Job.h"
+#include "../inc/mainFunc.h"
+#include <forward_list>
 
-/* Functions */
-
-//Random double generator
-double fRand(double a, double b)
-{
-	return ((double)rand() / RAND_MAX) * (b - a) + a;	
-}
-
-// Random Data Generator into file
-void rand_generator(){
-	double memory;
-	int num, time = 0;
-		
-	std::ofstream myfile("tempSrc.txt");
-
-	while(num != 50){
-		
-		memory = fRand(14.0, 35.0);
-		
-		time = rand()% 13 + 1;
-		
-		myfile <<  memory << "," << time << "\n";
-		
-		num = rand()% 1000 + 1;	
-
-	//	std::chrono::duration<int, std::milli> timespan(1000);
-	//	std::this_thread::sleep_for(timespan);
-		
-	}
-
-	myfile.close();
-
-}
 
 int main(){
-	
-/*
-	char* filename; 
-	int key;
+
+	std::string filename;
+    std::string membuf;
+    std::string timebuf;
+    std::forward_list<Job> Job_List;
 	double mem;
-	double time;
-*/
+	double Jtime;
 
-	rand_generator();
+	//Set random seed
+	srand((unsigned) time(0));
 
-/*	std::cout << "Type in the file of the name: ";
+	//generate data in file and set filename
+	std::string data_file = generate_data();
 
-	stdcin >> filename;
+	std::ifstream infile(data_file);
 
-	ifstream myfile (filename);
+	while (getline(infile, membuf, ',') && getline(infile, timebuf)){
 
-	while (getline(key, mem, time, ',')){
-		
+		//convert string data to double
+        mem = std::stod(membuf);
+        Jtime = std::stod(timebuf);
+
+		//create job and add to list
+        Job j(Jtime, mem);
+        Job_List.push_front(j);
 	}
-	*/
+
+	//close file
+	infile.close();
+
+	//print out list
+    while(!Job_List.empty()) {
+        std::cout << Job_List.front() << std::endl;
+        Job_List.pop_front();
+    }
+
 	return 0;
 }
