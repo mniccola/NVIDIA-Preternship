@@ -31,7 +31,15 @@ job_testObjs := $(OBJ)/job_test.o $(OBJ)/Job.o
 job_test: $(job_testObjs)
 	$(PP) $(CXXFLAGS) -o $(EXE)/job_test $(job_testObjs)
 
+# Command make main
 
+$(OBJ)/main.o: $(SRC)/main.cpp
+	$(PP) $(CXXFLAGS) -c $(SRC)/main.cpp -o $@
 
+$(OBJ)/mainFunc.o: $(SRC)/mainFunc.cpp
+	$(PP) $(CXXFLAGS) -c $(SRC)/mainFunc.cpp -o $@
 
+mainObjs := $(OBJ)/main.o $(OBJ)/Job.o $(OBJ)/mainFunc.o
 
+main: $(mainObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/main $(mainObjs)
