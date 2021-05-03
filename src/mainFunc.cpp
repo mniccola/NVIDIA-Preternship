@@ -38,3 +38,16 @@ std::string generate_data() {
 
 	return file_name;
 }
+
+void suggest_file(const double suggestion, const double mean, const double median, const double stdev, const double outlier)
+{
+	std::ofstream output_file("suggest.txt");
+
+	output_file << "Suggestion: " << std::to_string(suggestion) << "\n";
+	output_file << "Mean: " << std::to_string(mean) << "\n";
+	output_file << "Median: " << std::to_string(median) << "\n";
+	output_file << "Stdev: " << std::to_string(stdev) << "\n";
+	output_file << "Outliers: " << std::to_string(outlier) << "\n";
+
+	output_file.close();
+}
