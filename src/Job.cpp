@@ -1,7 +1,6 @@
 #include "../inc/Job.h"
 
 // Default Constructor
-
 Job::Job() : time(0), memory(0) {}
 
 // Overloaded Constructor
@@ -18,11 +17,13 @@ double Job::get_memory() const {
 }
 
 // get set the time used by the Job
+
 void Job::set_time(const double& in_time) {
     time = in_time;
 }
 
 // set the memory used by the Job
+
 void Job::set_memory(const double& in_memory) {
     memory = in_memory;
 }
