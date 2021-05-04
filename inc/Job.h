@@ -2,25 +2,29 @@
 #define JOB_H
 
 #include <iostream>
+#include <iomanip>
+
 
 class Job
 {
 	private:
-		float time;
-		float memory;
+		double time;
+		double memory;
 
 	public:
-		float get_time() const;
-		float get_memory() const;
+		double get_time() const;
+		double get_memory() const;
 
 		// Default Constructor
 		Job();
-	
-		// Overloaded Constructor
-		Job(const float &in_time, const float &in_memory);
 
-		void set_time(const float &in_time);
-		void set_memory(const float &in_memory);
+		// Overloaded Constructor
+		Job(const double &in_time, const double &in_memory);
+
+		void set_time(const double &in_time);
+		void set_memory(const double &in_memory);
+
+		friend std::ostream& operator<<(std::ostream& out, const Job& J);
 
 };
 
