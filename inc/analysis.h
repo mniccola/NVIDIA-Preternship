@@ -1,30 +1,11 @@
-#ifndef ANALYSIS_H
-#define ANALYSIS_H
-
 #include <iostream>
+#include <cmath>
+#include "Job.h"
+#include <forward_list>
 
-class analysis
-{
-	private:
-		float average;
-		float median;
-		float mode;
 
-	public:
-		float get_average() const;
-		float get_median() const;
-		float get_mode() const;
+double calc_avg_mem(const std::forward_list<Job>& the_list);
 
-		// Default Constructor
-		analysis();
-	
-		// Overloaded Constructor
-	//	analysis(const float &in_average, const float &in_median, const float &in_mode);
+double calc_med_mem(const std::forward_list<Job>& the_list);
 
-		void set_average(const float data[][]);
-		void set_memory(const float data[][]);
-		void set_mode(const float data[][]);
-
-};
-
-#endif
+double calc_stdev_mem(const std::forward_list<Job>& the_list);
