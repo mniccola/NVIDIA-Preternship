@@ -54,7 +54,7 @@ $(OBJ)/main.o: $(SRC)/main.cpp
 $(OBJ)/mainFunc.o: $(SRC)/mainFunc.cpp
 	$(PP) $(CXXFLAGS) -c $(SRC)/mainFunc.cpp -o $@
 
-mainObjs := $(OBJ)/main.o $(OBJ)/Job.o $(OBJ)/mainFunc.o $(OBJ)/Comp.o
+mainObjs := $(OBJ)/main.o $(OBJ)/Job.o $(OBJ)/mainFunc.o $(OBJ)/Comp.o $(OBJ)/analysis.o
 
 main: $(mainObjs)
 	$(PP) $(CXXFLAGS) -o $(EXE)/main $(mainObjs)
