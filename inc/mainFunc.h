@@ -4,6 +4,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <time.h>
+#include <iomanip>
 
 //generates data with parameters and writes it to a file
 void data_generator(const std::string& in_file, const double num, const double min_M, const double max_M, const double min_T, const double max_T);

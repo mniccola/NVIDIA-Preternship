@@ -1,5 +1,6 @@
 #include "../inc/mainFunc.h"
 
+
 //Random double generator
 double fRand(double a, double b) {
 	return ((double)rand() / RAND_MAX) * (b - a) + a;
@@ -43,11 +44,11 @@ void suggest_file(const double suggestion, const double mean, const double media
 {
 	std::ofstream output_file("suggest.txt");
 
-	output_file << "Suggestion: " << std::to_string(suggestion) << "\n";
-	output_file << "Mean: " << std::to_string(mean) << "\n";
-	output_file << "Median: " << std::to_string(median) << "\n";
-	output_file << "Stdev: " << std::to_string(stdev) << "\n";
-	output_file << "Outliers: " << std::to_string(outlier) << "\n";
+	output_file << "Suggestion: " << std::setprecision(5) << suggestion << "\n";
+	output_file << "Mean: " << std::setprecision(5) <<  mean << "\n";
+	output_file << "Median: " << std::setprecision(5) <<  median << "\n";
+	output_file << "Stdev: " << std::setprecision(5) <<  stdev << "\n";
+	output_file << "Outliers: " << std::setprecision(5) <<  outlier << "\n";
 
 	output_file.close();
 }
