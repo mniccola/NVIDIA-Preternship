@@ -6,6 +6,7 @@
 // #include <time.h>
 #include "../inc/Job.h"
 #include "../inc/mainFunc.h"
+#include "../inc/analysis.h"
 #include <forward_list>
 
 
@@ -40,6 +41,11 @@ int main(){
 	//close file
 	infile.close();
 
+	double mean = calc_avg_mem(Job_List);
+	double median = calc_med_mem(Job_List);
+	double stdev = calc_stdev_mem(Job_List);
+
+	suggest_file(0, mean, median, stdev, 0);
 	//print out list
     while(!Job_List.empty()) {
         std::cout << Job_List.front() << std::endl;
