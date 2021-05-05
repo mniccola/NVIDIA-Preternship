@@ -24,6 +24,9 @@ class Job
 		void set_time(const double &in_time);
 		void set_memory(const double &in_memory);
 
+		bool operator<(const Job& rhs) const;
+		bool operator>(const Job& rhs) const;
+
 		friend std::ostream& operator<<(std::ostream& out, const Job& J);
 
 };

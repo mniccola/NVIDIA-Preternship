@@ -28,6 +28,14 @@ void Job::set_memory(const double& in_memory) {
     memory = in_memory;
 }
 
+bool Job::operator<(const Job& rhs) const {
+    return memory < rhs.memory;
+}
+
+bool Job::operator>(const Job& rhs) const {
+    return memory > rhs.memory;
+}
+
 std::ostream& operator<<(std::ostream& out, const Job& J) {
     out << std::setprecision(5) << std::setw(5) <<  "Memory: " << J.memory << " Time: " << std::setw(6) << std::setprecision(5) <<  J.time;
     return out;
