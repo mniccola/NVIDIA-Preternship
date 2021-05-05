@@ -27,5 +27,13 @@ int main() {
     std::cout << "Job 2 memory: " << J2.get_memory() << std::endl;
     std::cout << "Job 2 time  : " << J2.get_time() << std::endl;
 
+
+    if(J2 > J1) {
+        std::cout << "J2 is > than J1" << std::endl;
+    } else {
+        std::cout << "J2 is < than J1" << std::endl;
+    }
+
+
     return 0;
 }
