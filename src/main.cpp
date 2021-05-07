@@ -45,7 +45,7 @@ int main(){
 	double median = calc_med_mem(Job_List);
 	double stdev = calc_stdev_mem(Job_List);
 
-	suggest_file(0, mean, median, stdev, 0);
+	suggest_file(mean + stdev / 4, mean, median, stdev, 0);
 	//print out list
     while(!Job_List.empty()) {
         std::cout << Job_List.front() << std::endl;

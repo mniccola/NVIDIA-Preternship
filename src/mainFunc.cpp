@@ -28,14 +28,20 @@ void data_generator(const std::string& in_file, const int num, const double min_
 
 std::string generate_data() {
 	std::string file_name;
-
+	double m_min, m_max, t_min, t_max;
+	int num;
 	//read filename from user input...
 	std::cout << "Where would you like to put the generate_data (filename): ";
 	std::cin >> file_name;
-
+	std::cout << "Enter a range for Memory: ";
+	std::cin >> m_min >> m_max;
+	std::cout << "Enter a range for Time: ";
+	std::cin >> t_min >> t_max;
+	std::cout << "How many data points: ";
+	std::cin >> num;
 	std::cout << "...Generating data..." << std::endl;
 
-	data_generator(file_name, 1000, 0, 100, 1, 5);
+	data_generator(file_name, num, m_min, m_max, t_min, t_max);
 
 	return file_name;
 }
