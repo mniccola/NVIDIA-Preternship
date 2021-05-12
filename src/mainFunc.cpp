@@ -46,7 +46,8 @@ void data_generator(const std::string& in_file, const double num, const double m
 // 	return file_name;
 // }
 
-void suggest_file(const double& suggestion, const double& mean, const double& median, const double& stdev, const double& outlier, const double& min, const double& max)
+void suggest_file(const double& suggestion, const double& mean, const double& median,
+	const double& stdev, const double& outlier, const double& min, const double& max, const std::string& file)
 {
 	std::ofstream output_file("suggest.txt");
 
@@ -57,6 +58,7 @@ void suggest_file(const double& suggestion, const double& mean, const double& me
 	output_file << "Outliers: " << std::setprecision(5) <<  outlier << "\n";
 	output_file << "Min: " << std::setprecision(5) <<  min << "\n";
 	output_file << "Max: " << std::setprecision(5) <<  max << "\n";
+	output_file << "data_file: " << file << "\n";
 	output_file.close();
 }
 

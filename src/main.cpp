@@ -72,7 +72,7 @@ int main(){
 		std::cout << "symmetric" << std::endl;
 	}
 
-	suggest_file(suggestion, mean, median, stdev, 0, m_min, m_max);
+	suggest_file(suggestion, mean, median, stdev, 0, m_min, m_max, file_name);
 	//print out list
     while(!Job_List.empty()) {
         std::cout << Job_List.front() << std::endl;

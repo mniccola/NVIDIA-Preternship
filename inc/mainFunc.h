@@ -15,4 +15,4 @@ double fRand(double a, double b);
 //handles user interaction for data generation process
 std::string generate_data();
 
-void suggest_file(const double&, const double&, const double&, const double&, const double&,const double&, const double&);
+void suggest_file(const double&, const double&, const double&, const double&, const double&,const double&, const double&, const std::string&);
