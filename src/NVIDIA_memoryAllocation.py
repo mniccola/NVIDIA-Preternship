@@ -4,7 +4,7 @@ import matplotlib.patches as mpatches
 import numpy as np
 
 # read file
-newfile = open('suggest.txt')
+newfile = open('../suggest.txt')
 
 # store suggest.txt values in a list
 stats = []
