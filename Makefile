@@ -12,7 +12,9 @@ OBJ := obj
 
 
 #make initialize
-
+initialize:
+	rm -rf $(OBJ) $(EXE)
+	mkdir $(OBJ) $(EXE)
 # Make clean
 clean:
 	rm -rf $(OBJ)/* $(EXE)/*
