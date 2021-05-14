@@ -4,7 +4,7 @@ from matplotlib import colors
 import numpy as np
 
 # Read file
-suggest_file = open('suggest.txt')
+suggest_file = open('../suggest.txt')
 
 # store suggest.txt values in list
 stats = []
