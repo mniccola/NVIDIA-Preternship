@@ -46,5 +46,5 @@ max_line = mpatches.Patch(color = 'y', label = 'Maximum')
 plt.legend(handles = [sugg_line, mean_line, median_line, stdev_line, min_line, max_line], bbox_to_anchor = (1.05, 1), fontsize = 8)
 plt.tight_layout()
 
-plt.savefig('statistical_analysis.png')
+plt.savefig('../statistical_analysis.png')
 plt.show()
